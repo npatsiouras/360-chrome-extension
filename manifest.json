@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "SensibilityVR.360Tour",
+    "description": "Facilitates communication between Launcher and Website",
+    "version": "1.0",
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+      },
+    "permissions": ["activeTab"],
+    "externally_connectable": {
+        "matches": ["https://bestpractices.gr/*"]
+      },
+    "content_scripts": [
+        {
+          "js": ["scripts/kemea_content.js"],
+          "matches": [
+            "https://bestpractices.gr/*"
+          ],
+          "run_at" : "document_start",
+          "world" : "MAIN"
+        }
+      ]
+  }
+  
